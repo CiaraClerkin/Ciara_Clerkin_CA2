@@ -61,6 +61,18 @@ build CMakeFiles/Ciara_Clerkin_CA2.dir/Bug.cpp.obj: CXX_COMPILER__Ciara_Clerkin_
   OBJECT_DIR = CMakeFiles\Ciara_Clerkin_CA2.dir
   OBJECT_FILE_DIR = CMakeFiles\Ciara_Clerkin_CA2.dir
 
+build CMakeFiles/Ciara_Clerkin_CA2.dir/Crawler.cpp.obj: CXX_COMPILER__Ciara_Clerkin_CA2_unscanned_Debug C$:/Users/student/CLionProjects/Ciara_Clerkin_CA2/Crawler.cpp || cmake_object_order_depends_target_Ciara_Clerkin_CA2
+  DEP_FILE = CMakeFiles\Ciara_Clerkin_CA2.dir\Crawler.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Ciara_Clerkin_CA2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Ciara_Clerkin_CA2.dir
+
+build CMakeFiles/Ciara_Clerkin_CA2.dir/Hopper.cpp.obj: CXX_COMPILER__Ciara_Clerkin_CA2_unscanned_Debug C$:/Users/student/CLionProjects/Ciara_Clerkin_CA2/Hopper.cpp || cmake_object_order_depends_target_Ciara_Clerkin_CA2
+  DEP_FILE = CMakeFiles\Ciara_Clerkin_CA2.dir\Hopper.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Ciara_Clerkin_CA2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Ciara_Clerkin_CA2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Ciara_Clerkin_CA2
@@ -69,7 +81,7 @@ build CMakeFiles/Ciara_Clerkin_CA2.dir/Bug.cpp.obj: CXX_COMPILER__Ciara_Clerkin_
 #############################################
 # Link the executable Ciara_Clerkin_CA2.exe
 
-build Ciara_Clerkin_CA2.exe: CXX_EXECUTABLE_LINKER__Ciara_Clerkin_CA2_Debug CMakeFiles/Ciara_Clerkin_CA2.dir/main.cpp.obj CMakeFiles/Ciara_Clerkin_CA2.dir/Bug.cpp.obj
+build Ciara_Clerkin_CA2.exe: CXX_EXECUTABLE_LINKER__Ciara_Clerkin_CA2_Debug CMakeFiles/Ciara_Clerkin_CA2.dir/main.cpp.obj CMakeFiles/Ciara_Clerkin_CA2.dir/Bug.cpp.obj CMakeFiles/Ciara_Clerkin_CA2.dir/Crawler.cpp.obj CMakeFiles/Ciara_Clerkin_CA2.dir/Hopper.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Ciara_Clerkin_CA2.dir

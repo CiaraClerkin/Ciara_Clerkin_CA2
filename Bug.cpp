@@ -6,6 +6,8 @@
 
 //using namespace std;
 
+//default constructor
+
 Bug::Bug(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path) {
     this->id = id;
     this->position = position;
@@ -15,32 +17,28 @@ Bug::Bug(int id, pair<int, int> position, int direction, int size, bool alive, l
     this->path = path;
 }
 
-void Bug::move() {
-
-}
-
 bool Bug::isWayBlocked() {
     int boardWidth = 10;
     int boardHeight = 10;
 
     switch(direction) {
         case 1:
-            if (position.second - 1 == 0) {
+            if (position.second <= 0) {
                 return true;
             }
             break;
         case 2:
-            if (position.first -1 == 0) {
+            if (position.first >= boardWidth) {
                 return true;
             }
             break;
         case 3:
-            if (position.second + 1 == boardHeight) {
+            if (position.second >= boardHeight) {
                 return true;
             }
             break;
         case 4:
-            if (position.first + 1 == boardWidth) {
+            if (position.first <= 0) {
                 return true;
             }
             break;

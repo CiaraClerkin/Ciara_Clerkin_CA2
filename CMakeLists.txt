@@ -5,4 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Ciara_Clerkin_CA2 main.cpp
         Bug.h
-        Bug.cpp)
+        Bug.cpp
+        Crawler.cpp
+        Crawler.h
+        Hopper.cpp
+        Hopper.h)
