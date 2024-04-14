@@ -10,7 +10,7 @@ Bug::Bug(int id, pair<int, int> position, int direction, int size, bool alive, l
     this->id = id;
     this->position = position;
     this->direction = direction;
-    this->size = size;
+    this->size = size;   //1 - 20
     this->alive = alive;
     this->path = path;
 }

@@ -1,0 +1,14 @@
+# ninja log v5
+14	760	7347964361164572	CMakeFiles/Ciara_Clerkin_CA2.dir/Crawler.cpp.obj	12745fb63a5d55b8
+0	748	7347964361094518	CMakeFiles/Ciara_Clerkin_CA2.dir/main.cpp.obj	791ee2f93a39aeb8
+8	560	7347968564934005	build.ninja	c8be04331ad5baf3
+5	765	7347964361204528	CMakeFiles/Ciara_Clerkin_CA2.dir/Hopper.cpp.obj	b0ecf8e613803da3
+10	766	7347964361244525	CMakeFiles/Ciara_Clerkin_CA2.dir/Bug.cpp.obj	c8b13352fe462660
+4	779	7347966331389318	CMakeFiles/Ciara_Clerkin_CA2.dir/BugsTest.cpp.obj	2b1eebdc4e71c665
+2	277	7347968564934005	build.ninja	c8be04331ad5baf3
+4	708	7347968573089289	CMakeFiles/Ciara_Clerkin_CA2.dir/main.cpp.obj	791ee2f93a39aeb8
+8	383	7347970626731576	CMakeFiles/Ciara_Clerkin_CA2.dir/Hopper.cpp.obj	b0ecf8e613803da3
+3	522	7347970628121514	CMakeFiles/Ciara_Clerkin_CA2.dir/main.cpp.obj	791ee2f93a39aeb8
+17	924	7347978361182359	CMakeFiles/Ciara_Clerkin_CA2.dir/Bug.cpp.obj	c8b13352fe462660
+23	952	7347978361552352	CMakeFiles/Ciara_Clerkin_CA2.dir/Hopper.cpp.obj	b0ecf8e613803da3
+12	972	7347978361742351	CMakeFiles/Ciara_Clerkin_CA2.dir/Crawler.cpp.obj	12745fb63a5d55b8
