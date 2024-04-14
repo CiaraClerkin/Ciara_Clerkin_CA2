@@ -6,8 +6,6 @@
 
 //using namespace std;
 
-//default constructor
-
 Bug::Bug(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path) {
     this->id = id;
     this->position = position;

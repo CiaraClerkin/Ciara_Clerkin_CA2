@@ -1,10 +1,6 @@
-#include "Bug.cpp"
+#include "Crawler.h"
 
-class Crawler: public Bug {
-
-};
-
-void Bug::move() {
+void Crawler::move() {
     while (Bug::isWayBlocked()) {
         direction = (rand() % 4) + 1;
     }

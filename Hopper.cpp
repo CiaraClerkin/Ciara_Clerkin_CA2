@@ -1,11 +1,10 @@
 #include "Hopper.h"
 
-Hopper::Hopper(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path, int hopLength) {
-    private:
-        int hopLength; //range of 2-4 units
+Hopper::Hopper(int hopLength) {
+    this->hopLength = hopLength; //range of 2-4 units
 };
 
-void Bug::move() {
+void Hopper::move() {
     for (int i = 0; i < hopLength; i++) {
         switch (direction) {
             case 1:
@@ -24,7 +23,7 @@ void Bug::move() {
                 break;
         }
 
-        if (Bug::isWayBlocked()) {
+        if (Hopper::isWayBlocked()) {
             i = hopLength;
         }
     }

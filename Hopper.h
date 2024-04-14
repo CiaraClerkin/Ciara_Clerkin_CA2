@@ -7,9 +7,9 @@ class Hopper : public Bug {
 private:
     int hopLength;
 public:
-    Hopper(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path, int hopLength);
+    Hopper(int hopLength);
     void move();
-    bool isWayBlocked();
+    //bool isWayBlocked();
 };
 
 #endif

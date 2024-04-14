@@ -8,7 +8,10 @@
 using namespace std;
 
 class Bug {
-private:
+//private:
+
+
+public:
     int id;
     pair<int, int> position;
     int direction;
@@ -16,11 +19,9 @@ private:
     bool alive;
     list<pair<int, int>> path;
 
-public:
+    Bug();
     Bug(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path);
-
     virtual void move();
-
     bool isWayBlocked(void);
 };
 
