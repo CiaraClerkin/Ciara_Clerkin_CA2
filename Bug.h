@@ -5,24 +5,25 @@
 #include <utility>
 #include <list>
 
-using namespace std;
 
 class Bug {
 //private:
 
 
-public:
+protected:
     int id;
-    pair<int, int> position;
+    std::pair<int, int> position;
     int direction;
     int size;
     bool alive;
-    list<pair<int, int>> path;
+    std::list<std::pair<int, int>> path;
 
-    Bug();
-    Bug(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path);
-    virtual void move();
-    bool isWayBlocked(void);
+public:
+    //Bug();
+    Bug(int id=0, std::pair<int, int> = {0, 0}, int direction=1, int size=1, bool alive=true, std::list<std::pair<int, int>> path={});
+    virtual void move()=0;  /// "=0" makes a pure virtual function, so this becomes an abstract class (cant be instantiated)
+    bool isWayBlocked();
+    std::pair<int, int> getPosition();
 };
 
 #endif

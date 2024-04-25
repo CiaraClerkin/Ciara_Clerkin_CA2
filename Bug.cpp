@@ -3,8 +3,9 @@
 #include <string>
 //#include <list>
 #include <utility>
+#include <iostream>
 
-//using namespace std;
+using namespace std;
 
 Bug::Bug(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path) {
     this->id = id;
@@ -14,6 +15,11 @@ Bug::Bug(int id, pair<int, int> position, int direction, int size, bool alive, l
     this->alive = alive;
     this->path = path;
 }
+
+/*Bug::Bug(int id, std::pair<int, int> position, int direction, int size, bool alive,
+         std::list<std::pair<int, int>> path) {
+
+}*/
 
 bool Bug::isWayBlocked() {
     int boardWidth = 10;
@@ -46,3 +52,10 @@ bool Bug::isWayBlocked() {
 
     return false;
 }
+
+pair<int, int> Bug::getPosition() {
+    return position;
+}
+
+
+
