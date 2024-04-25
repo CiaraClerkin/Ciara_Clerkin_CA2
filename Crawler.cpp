@@ -35,7 +35,7 @@ void Crawler::move() {
             break;
     }
 
-    cout << position.first << ", " << position.second << endl;
+    //cout << position.first << ", " << position.second << endl;
 
     path.emplace_back(position);
 }
