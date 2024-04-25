@@ -19,15 +19,19 @@ void Crawler::move() {
     }
 
     switch (direction) {
+        //North
         case 1:
             position.second--;
             break;
+        //East
         case 2:
             position.first++;
             break;
+        //South
         case 3:
             position.second++;
             break;
+        //West
         case 4:
             position.first--;
             break;

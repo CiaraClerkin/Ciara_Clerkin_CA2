@@ -26,21 +26,25 @@ bool Bug::isWayBlocked() {
     int boardHeight = 10;
 
     switch(direction) {
+        //North
         case 1:
             if (position.second <= 0) {
                 return true;
             }
             break;
+        //East
         case 2:
             if (position.first >= boardWidth) {
                 return true;
             }
             break;
+        //South
         case 3:
             if (position.second >= boardHeight) {
                 return true;
             }
             break;
+        //West
         case 4:
             if (position.first <= 0) {
                 return true;
@@ -53,8 +57,8 @@ bool Bug::isWayBlocked() {
     return false;
 }
 
-pair<int, int> Bug::getPosition() {
-    return position;
+void Bug::outputBug() {
+    cout << "id: " << id << " | position: " << position.first << ", " << position.second << " | direction: " << direction << " | size: " << size << endl;
 }
 
 

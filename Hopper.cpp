@@ -15,17 +15,21 @@ Hopper::Hopper(int id, pair<int, int> position, int direction, int size, bool al
 void Hopper::move() {
     for (int i = 0; i < hopLength; i++) {
         switch (direction) {
-            case 1:  //
+            //North
+            case 1:
                 position.second--;
                 break;
-            case 2:  //
+            //East
+            case 2:
                 position.first++;
                 break;
-            case 3:  //
-                position.first--;
-                break;
-            case 4: //
+            //South
+            case 3:
                 position.second++;
+                break;
+            //West
+            case 4:
+                position.first--;
                 break;
             default:
                 break;
