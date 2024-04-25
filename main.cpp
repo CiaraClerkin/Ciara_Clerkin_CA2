@@ -23,9 +23,9 @@ int main() {
     cout << crawl.getPosition().first << ", " << crawl.getPosition().second << endl;
 
 
-    //vector<Bug*> vect(10);   // vector of pointers to Bug objects
-    //vect.push_back( new Crawler(0, pair(5, 5), 5, 1, 2, {}));
-    //vect.push_back( new Hopper( sss,s,s,s,));
+    vector<Bug*> vect;   // vector of pointers to Bug objects
+    vect.push_back( new Crawler(0, {1, 7}, 4, 3, true, {}));
+    vect.push_back( new Hopper(1, {5, 5}, 1, 4, true, {}));
 
     /*for( Bug* bugPtr : vect) {
         bugPtr->move();
@@ -33,10 +33,10 @@ int main() {
         //cout << bugPtr
     }*/
 
-    /*for (auto & bug : vect) {
+    for (const auto & bug : vect) {
         bug->move();
-        cout << bug->getPosition().first << endl;
-    }*/
+        cout << bug->getPosition().first << ", " << bug->getPosition().second << endl;
+    }
 
     //printing happens in crawler right now, fix that later.
 
