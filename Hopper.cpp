@@ -1,5 +1,7 @@
 #include "Hopper.h"
 
+#include <iostream>
+
 using namespace std;
 
 Hopper::Hopper(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path, int hopLength) {
@@ -13,30 +15,36 @@ Hopper::Hopper(int id, pair<int, int> position, int direction, int size, bool al
 };
 
 void Hopper::move() {
-    for (int i = 0; i < hopLength; i++) {
-        switch (direction) {
-            //North
-            case 1:
-                position.second--;
-                break;
-            //East
-            case 2:
-                position.first++;
-                break;
-            //South
-            case 3:
-                position.second++;
-                break;
-            //West
-            case 4:
-                position.first--;
-                break;
-            default:
-                break;
-        }
+    if (Bug::isWayBlocked()) {
+        direction = (rand() % 4) + 1;
+        //i = hopLength;
+    }
 
-        if (Hopper::isWayBlocked()) {
+    for (int i = 0; i < hopLength; i++) {
+        if (Bug::isWayBlocked()) {
             i = hopLength;
+        }
+        else {
+            switch (direction) {
+                //North
+                case 1:
+                    position.second--;
+                    break;
+                    //East
+                case 2:
+                    position.first++;
+                    break;
+                    //South
+                case 3:
+                    position.second++;
+                    break;
+                    //West
+                case 4:
+                    position.first--;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
