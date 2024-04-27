@@ -57,5 +57,14 @@ bool Bug::isWayBlocked() {
     return false;
 }
 
+bool Bug::isIdSame(int id) {
+    if (this->id == id) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 
 

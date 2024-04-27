@@ -12,7 +12,7 @@ int main() {
     int choice = 0;
 
     while (choice != 8) {
-        cout << "1. Initialize Bug Board (load data from file)" << endl;
+        cout << endl << "1. Initialize Bug Board (load data from file)" << endl;
         cout << "2. Display all Bugs" << endl;
         cout << "3. Find a Bug (given an id)" << endl;
         cout << "4. Tap the Bug Board (causes move all, then fight/eat)" << endl;
@@ -25,9 +25,9 @@ int main() {
 
         //cout << choice << endl;
 
-        //switch (choice) {
-            //case 1: {
-            if (choice == 1) {
+        switch (choice) {
+            case 1: {
+                //if (choice == 1) {
                 ifstream fin("bugs.txt");
                 string line = "";
                 string value = "";
@@ -133,27 +133,52 @@ int main() {
                 //while (getline(ss, value, ";")) {
 
                 }*/
-                //break;
+                break;
             }
-            //case 2: {
-            else if (choice == 2) {
-                cout << bugs.size() << endl;
+            case 2: {
                 for (const auto &bug: bugs) {
                     //bug->move();
                     bug->outputBug();
                 }
                 break;
             }
-                /*case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;*/
+            case 3: {
+                int id;
+                bool bugFound;
+                cout << "Enter id: ";
+                cin >> id;
+                cout << endl;
+
+                for (const auto &bug: bugs) {
+                    if (bug->isIdSame(id)) {
+                        bugFound = true;
+                        bug->outputBug();
+                        break;
+                    }
+                }
+
+                if (!bugFound) {
+                    cout << "bug " << id << " not found";
+                }
+
+                break;
+            }
+            case 4:
+                for (const auto &bug: bugs) {
+                    bug->move();
+                }
+                break;
+            case 5:
+                for (const auto &bug: bugs) {
+                    bug->outputBugHistory();
+                }
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+
+        }
     }
     return 0;
 }

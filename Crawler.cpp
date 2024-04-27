@@ -53,3 +53,22 @@ void Crawler::outputBug() {
 
     cout << id << " Crawler (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << status << endl;
 }
+
+void Crawler::outputBugHistory() {
+    cout << id << " Crawler Path: ";
+
+
+    for (list<pair<int, int>>::const_iterator it = path.cbegin(); it != path.cend(); ++it) {
+        cout << "(" << it->first << ", " << it->second << "), ";
+    }
+
+    if (alive) {
+        cout << "Alive!";
+    }
+    else {
+        // Where "Eaten by <id>" message will go
+        cout << "Dead!";
+    }
+
+    cout << endl;
+}

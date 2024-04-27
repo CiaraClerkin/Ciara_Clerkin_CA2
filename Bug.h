@@ -24,6 +24,8 @@ public:
     virtual void move()=0;  /// "=0" makes a pure virtual function, so this becomes an abstract class (cant be instantiated)
     bool isWayBlocked();
     virtual void outputBug()=0;
+    bool isIdSame(int id);
+    virtual void outputBugHistory()=0;
 };
 
 #endif

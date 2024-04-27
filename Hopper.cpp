@@ -60,3 +60,21 @@ void Hopper::outputBug() {
 
     cout << id << " Hopper (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << hopLength << " " << status << endl;
 }
+
+void Hopper::outputBugHistory() {
+    cout << id << " Hopper Path: ";
+
+    for (list<pair<int, int>>::const_iterator it = path.cbegin(); it != path.cend(); ++it) {
+        cout << "(" << it->first << ", " << it->second << "), ";
+    }
+
+    if (alive) {
+        cout << "Alive!";
+    }
+    else {
+        // Where "Eaten by <id>" message will go
+        cout << "Dead!";
+    }
+
+    cout << endl;
+}
