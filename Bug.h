@@ -17,6 +17,7 @@ protected:
     int size;
     bool alive;
     std::list<std::pair<int, int>> path;
+    std::string type;
 
 public:
     //Bug();
@@ -25,7 +26,8 @@ public:
     bool isWayBlocked();
     virtual void outputBug()=0;
     bool isIdSame(int id);
-    virtual void outputBugHistory()=0;
+    std::string bugHistory();
+    void outputBugHistory();
 };
 
 #endif

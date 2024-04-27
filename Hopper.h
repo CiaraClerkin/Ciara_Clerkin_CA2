@@ -10,7 +10,8 @@ public:
     Hopper(int id=0, std::pair<int, int> position={}, int direction=1, int size=1, bool alive=true, std::list<std::pair<int, int>> path = {}, int hopLength=2);
     void move();
     void outputBug();
-    void outputBugHistory();
+    //std::string bugHistory();
+    //void outputBugHistory();
     //bool isWayBlocked();
 };
 

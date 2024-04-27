@@ -11,7 +11,7 @@ Crawler::Crawler (int id, pair<int, int> position, int direction, int size, bool
     this->size = size;   //1 - 20
     this->alive = alive;
     this->path = path;
-    char type = 'C';
+    type = "Crawler";
 }
 
 void Crawler::move() {
@@ -51,11 +51,32 @@ void Crawler::outputBug() {
         status = "Dead";
     }
 
-    cout << id << " Crawler (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << status << endl;
+    cout << id << " " << type << " (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << status << endl;
+}
+
+/*string Crawler::bugHistory() {
+    string final = to_string(id) + " Crawler Path: ";;
+
+    for (list<pair<int, int>>::const_iterator it = path.cbegin(); it != path.cend(); ++it) {
+        //cout << "(" << it->first << ", " << it->second << "), ";
+        final += "(" + to_string(it->first) + ", " + to_string(it->second) + "), ";
+    }
+
+    string status = "Alive!";
+    if (!alive) {
+        // Where "Eaten by <id>" message will go
+        status = "Dead!";
+    }
+
+    final += status + "\n";
+
+    return final;
 }
 
 void Crawler::outputBugHistory() {
-    cout << id << " Crawler Path: ";
+    cout << bugHistory();
+
+    /*cout << id << " Crawler Path: ";
 
 
     for (list<pair<int, int>>::const_iterator it = path.cbegin(); it != path.cend(); ++it) {
@@ -70,5 +91,5 @@ void Crawler::outputBugHistory() {
         cout << "Dead!";
     }
 
-    cout << endl;
-}
+    cout << endl;*/
+//}

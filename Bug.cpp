@@ -66,5 +66,28 @@ bool Bug::isIdSame(int id) {
     }
 }
 
+string Bug::bugHistory() {
+    string final = to_string(id) + " " + type + " Path: ";;
+
+    for (list<pair<int, int>>::const_iterator it = path.cbegin(); it != path.cend(); ++it) {
+        //cout << "(" << it->first << ", " << it->second << "), ";
+        final += "(" + to_string(it->first) + ", " + to_string(it->second) + "), ";
+    }
+
+    string status = "Alive!";
+    if (!alive) {
+        // Where "Eaten by <id>" message will go
+        status = "Dead!";
+    }
+
+    final += status + "\n";
+
+    return final;
+}
+
+void Bug::outputBugHistory() {
+    cout << bugHistory();
+}
+
 
 

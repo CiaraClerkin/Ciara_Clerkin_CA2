@@ -12,7 +12,7 @@ Hopper::Hopper(int id, pair<int, int> position, int direction, int size, bool al
     this->alive = alive;
     this->path = path;
     this->hopLength = hopLength; //range of 2-4 units
-    char type = 'H';
+    type = "Hopper";
 };
 
 void Hopper::move() {
@@ -54,27 +54,8 @@ void Hopper::move() {
 
 void Hopper::outputBug() {
     string status = "Alive";
-    if (!alive) {
-        status = "Dead";
-    }
+    if (!alive) status = "Dead";
 
-    cout << id << " Hopper (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << hopLength << " " << status << endl;
+    cout << id << " " << type << " (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << hopLength << " " << status << endl;
 }
 
-void Hopper::outputBugHistory() {
-    cout << id << " Hopper Path: ";
-
-    for (list<pair<int, int>>::const_iterator it = path.cbegin(); it != path.cend(); ++it) {
-        cout << "(" << it->first << ", " << it->second << "), ";
-    }
-
-    if (alive) {
-        cout << "Alive!";
-    }
-    else {
-        // Where "Eaten by <id>" message will go
-        cout << "Dead!";
-    }
-
-    cout << endl;
-}

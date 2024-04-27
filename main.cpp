@@ -177,6 +177,12 @@ int main() {
                 break;
             case 7:
                 break;
+            case 8:
+                ofstream fout("Bug History.txt");
+                for (const auto &bug: bugs) {
+                    fout << bug->bugHistory();
+                }
+                break;
 
         }
     }
