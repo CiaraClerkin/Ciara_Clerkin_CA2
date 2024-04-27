@@ -12,6 +12,7 @@ Hopper::Hopper(int id, pair<int, int> position, int direction, int size, bool al
     this->alive = alive;
     this->path = path;
     this->hopLength = hopLength; //range of 2-4 units
+    char type = 'H';
 };
 
 void Hopper::move() {
@@ -49,4 +50,13 @@ void Hopper::move() {
     }
 
     path.emplace_back(position);
+}
+
+void Hopper::outputBug() {
+    string status = "Alive";
+    if (!alive) {
+        status = "Dead";
+    }
+
+    cout << id << " Hopper (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << hopLength << " " << status << endl;
 }

@@ -57,9 +57,5 @@ bool Bug::isWayBlocked() {
     return false;
 }
 
-void Bug::outputBug() {
-    cout << "id: " << id << " | position: " << position.first << ", " << position.second << " | direction: " << direction << " | size: " << size << endl;
-}
-
 
 

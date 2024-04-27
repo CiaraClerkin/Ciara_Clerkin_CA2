@@ -11,6 +11,7 @@ Crawler::Crawler (int id, pair<int, int> position, int direction, int size, bool
     this->size = size;   //1 - 20
     this->alive = alive;
     this->path = path;
+    char type = 'C';
 }
 
 void Crawler::move() {
@@ -42,4 +43,13 @@ void Crawler::move() {
     //cout << position.first << ", " << position.second << endl;
 
     path.emplace_back(position);
+}
+
+void Crawler::outputBug() {
+    string status = "Alive";
+    if (!alive) {
+        status = "Dead";
+    }
+
+    cout << id << " Crawler (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << status << endl;
 }

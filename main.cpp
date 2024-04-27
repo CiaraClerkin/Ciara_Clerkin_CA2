@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+    vector<Bug *> bugs;
     int choice = 0;
 
     while (choice != 8) {
@@ -22,12 +23,11 @@ int main() {
 
         cin >> choice;
 
-        vector<Bug*> bugs;
-
         //cout << choice << endl;
 
-        switch (choice) {
-            case 1:
+        //switch (choice) {
+            //case 1: {
+            if (choice == 1) {
                 ifstream fin("bugs.txt");
                 string line = "";
                 string value = "";
@@ -46,14 +46,13 @@ int main() {
 
                 while (getline(fin, line)) {
                     lines.push_back(line);
-                    cout << line << endl;
+                    //cout << line << endl;
                     //vect.push_back( new Crawler(0, {1, 7}, 4, 3, true, {}));
                 }
 
 
-
-                for (string l : lines) {
-                    cout << l << endl;
+                for (string l: lines) {
+                    //cout << l << endl;
                     stringstream ss(l);
                     string value = "";
                     vector<string> values;
@@ -72,21 +71,20 @@ int main() {
                     position.first = x;
                     position.second = y;
 
-                    cout << type << " " << id << " " << x << " " << y << " " << direction << " " << size;
+                    //cout << type << " " << id << " " << x << " " << y << " " << direction << " " << size;
 
                     //ss >> type >> id >> x >> y >> direction >> size;
 
                     if (type == 'H') {
                         hopLength = stoi(values[6]);
-                        cout << " " << hopLength;
+                        //cout << " " << hopLength;
                         bugs.push_back(new Hopper(id, position, direction, size, true, {}, hopLength));
 
-                    }
-                    else {
+                    } else {
                         bugs.push_back(new Crawler(id, position, direction, size, true, {}));
                     }
 
-                    cout << endl;
+                    //cout << endl;
                     /*while (getline(ss, value, ';')) {
                         ss >> type >> id >> x >> y >> direction >> size;
                         /*ss >> type;
@@ -95,25 +93,25 @@ int main() {
                         ss >> y;
                         ss >> direction;
                         ss >> size;*/
-                        /*position.first = x;
-                        position.second = y;
-                        cout << type << " " << id << " " << x << " " << y << " " << direction << " " << size << endl;
+                    /*position.first = x;
+                    position.second = y;
+                    cout << type << " " << id << " " << x << " " << y << " " << direction << " " << size << endl;
 
-                        if (type == 'H') {
-                            ss >> hopLength;
-                            int hopLength1 = hopLength;
-                            bugs.push_back(new Hopper(id, position, direction, size, true, {}, hopLength1));
-                        }
-                        else {
-                            bugs.push_back(new Crawler(id, position, direction, size, true, {}));
-                        }*/
+                    if (type == 'H') {
+                        ss >> hopLength;
+                        int hopLength1 = hopLength;
+                        bugs.push_back(new Hopper(id, position, direction, size, true, {}, hopLength1));
+                    }
+                    else {
+                        bugs.push_back(new Crawler(id, position, direction, size, true, {}));
+                    }*/
 
 
-                        //>> position >> direction >> size >> alive >> path;
+                    //>> position >> direction >> size >> alive >> path;
                 }
 
 
-                for (const auto & bug : bugs) {
+                /*for (const auto & bug : bugs) {
                     //bug->move();
                     bug->outputBug();
                 }
@@ -134,24 +132,32 @@ int main() {
 
                 //while (getline(ss, value, ";")) {
 
+                }*/
+                //break;
+            }
+            //case 2: {
+            else if (choice == 2) {
+                cout << bugs.size() << endl;
+                for (const auto &bug: bugs) {
+                    //bug->move();
+                    bug->outputBug();
                 }
                 break;
-            /*case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;*/
+            }
+                /*case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;*/
     }
-
     return 0;
 }
+
 
 /*void testing() {
     std::cout << "Hello, World!" << std::endl;
