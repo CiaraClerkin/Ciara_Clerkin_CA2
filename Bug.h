@@ -28,6 +28,8 @@ public:
     bool isIdSame(int id);
     std::string bugHistory();
     void outputBugHistory();
+    bool isPositionSame(int x, int y);
+    std::string getBasicDetails();
 };
 
 #endif

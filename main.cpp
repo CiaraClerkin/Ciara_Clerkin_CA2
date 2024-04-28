@@ -174,6 +174,23 @@ int main() {
                 }
                 break;
             case 6:
+                //board with and height of 10
+                for (int i = 0; i < 10; i++) {
+                    for (int j =0; j < 10; j++) {
+                        cout << "(" << i << ", " << j << ")";
+
+                        bool bugFound = false;
+                        for (const auto& bug : bugs) {
+                            if (bug->isPositionSame(i, j)) {
+                                bugFound = true;
+                                cout << bug->getBasicDetails() << ", ";
+                            }
+                        }
+
+                        if (!bugFound) cout << "empty";
+                        cout << endl;
+                    }
+                }
                 break;
             case 7:
                 break;

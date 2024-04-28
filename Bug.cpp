@@ -89,5 +89,16 @@ void Bug::outputBugHistory() {
     cout << bugHistory();
 }
 
+bool Bug::isPositionSame(int x, int y) {
+    if (x == position.first && y == position.second) {
+        return true;
+    }
+    return false;
+}
+
+string Bug::getBasicDetails() {
+    return type + " " + to_string(id);
+}
+
 
 
