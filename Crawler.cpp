@@ -47,7 +47,7 @@ void Crawler::move() {
 
 void Crawler::outputBug() {
     string status = "Alive";
-    if (!alive) status = "Eaten by " + to_string(killerId);
+    if (!alive) status = "Dead";
 
     cout << id << " " << type << " (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << status << endl;
 }

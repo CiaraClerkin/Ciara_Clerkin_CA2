@@ -120,6 +120,10 @@ bool Bug::isAlive() {
     return alive;
 }
 
+string Bug::getType() {
+    return type;
+}
+
 std::list<std::pair<int, int>> Bug::getPath() {
     return path;
 }

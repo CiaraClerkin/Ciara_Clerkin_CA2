@@ -37,6 +37,7 @@ public:
     int getDirection();
     int getSize();
     bool isAlive();
+    std::string getType();
     std::list<std::pair<int, int>> getPath();
     void die(int killerId);
 

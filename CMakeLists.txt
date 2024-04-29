@@ -10,4 +10,6 @@ add_executable(Ciara_Clerkin_CA2 main.cpp
         Crawler.h
         Hopper.cpp
         Hopper.h
+        Patroller.cpp
+        Patroller.h
 )
