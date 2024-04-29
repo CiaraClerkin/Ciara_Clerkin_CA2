@@ -4,13 +4,13 @@
 //Crawler::Crawler() = default;
 using namespace std;
 
-Crawler::Crawler (int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path) {
+Crawler::Crawler (int id, pair<int, int> position, int direction, int size) {
     this->id = id;
     this->position = position;
     this->direction = direction;
     this->size = size;   //1 - 20
-    this->alive = alive;
-    this->path = path;
+    //this->alive = true;
+    this->path = {position};
     type = "Crawler";
 }
 
@@ -47,9 +47,7 @@ void Crawler::move() {
 
 void Crawler::outputBug() {
     string status = "Alive";
-    if (!alive) {
-        status = "Dead";
-    }
+    if (!alive) status = "Eaten by " + to_string(killerId);
 
     cout << id << " " << type << " (" << position.first << ", " << position.second << ") " << size << " " << direction << " " << status << endl;
 }

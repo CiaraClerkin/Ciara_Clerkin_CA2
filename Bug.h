@@ -18,10 +18,11 @@ protected:
     bool alive;
     std::list<std::pair<int, int>> path;
     std::string type;
+    int killerId;
 
 public:
     //Bug();
-    Bug(int id=0, std::pair<int, int> = {0, 0}, int direction=1, int size=1, bool alive=true, std::list<std::pair<int, int>> path={});
+    Bug(int id=0, std::pair<int, int> = {0, 0}, int direction=1, int size=1);
     virtual void move()=0;  /// "=0" makes a pure virtual function, so this becomes an abstract class (cant be instantiated)
     bool isWayBlocked();
     virtual void outputBug()=0;
@@ -30,6 +31,15 @@ public:
     void outputBugHistory();
     bool isPositionSame(int x, int y);
     std::string getBasicDetails();
+
+    int getId();
+    std::pair<int, int> getPosition();
+    int getDirection();
+    int getSize();
+    bool isAlive();
+    std::list<std::pair<int, int>> getPath();
+    void die(int killerId);
+
 };
 
 #endif

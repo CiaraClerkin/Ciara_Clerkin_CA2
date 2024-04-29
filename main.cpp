@@ -10,6 +10,7 @@ using namespace std;
 int main() {
     vector<Bug *> bugs;
     int choice = 0;
+    //list<pair<pair<int, int>, vector<Bug *>>> samesies;
 
     while (choice != 8) {
         cout << endl << "1. Initialize Bug Board (load data from file)" << endl;
@@ -78,10 +79,10 @@ int main() {
                     if (type == 'H') {
                         hopLength = stoi(values[6]);
                         //cout << " " << hopLength;
-                        bugs.push_back(new Hopper(id, position, direction, size, true, {}, hopLength));
+                        bugs.push_back(new Hopper(id, position, direction, size, hopLength));
 
                     } else {
-                        bugs.push_back(new Crawler(id, position, direction, size, true, {}));
+                        bugs.push_back(new Crawler(id, position, direction, size));
                     }
 
                     //cout << endl;
@@ -163,11 +164,53 @@ int main() {
 
                 break;
             }
-            case 4:
+            case 4: {
                 for (const auto &bug: bugs) {
-                    bug->move();
+                    if (bug->isAlive()) bug->move();
                 }
+
+                for (int i = 0; i < 10; i++) {
+                    for (int j = 0; j < 10; j++) {
+                        vector<Bug*> samesies;
+                        //vector<Bug *> bugsSameCell;
+                        bool bugFound = false;
+                        for (const auto &bug: bugs) {
+                            if (bug->isAlive()) {
+                                bugFound = true;
+                                if (bug->isPositionSame(i, j)) {
+                                    samesies.push_back(bug);
+                                }
+                            }
+                        }
+
+                        int bigBugId = 0;
+                        int max = 0;
+
+                        for (const auto &bug: samesies) {
+                            int size = bug->getSize();
+                            if (size > max) {
+                                max = size;
+                                bigBugId = bug->getId();
+                            }
+
+                            //for (const auto &bug: pair.second) {
+                            //}
+                        }
+
+                        for (const auto &bug : samesies) {
+                            if (bug->getId() != bigBugId) {
+                                bug->die(bigBugId);
+                            }
+                        }
+
+                        /*if (bugFound) {
+                            samesies.push_back(pair<pair<int, int>, vector<Bug *>>(pair<int, int>(i, j), bugsSameCell));
+                        }*/
+                    }
+                }
+
                 break;
+            }
             case 5:
                 for (const auto &bug: bugs) {
                     bug->outputBugHistory();

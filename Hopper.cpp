@@ -4,13 +4,13 @@
 
 using namespace std;
 
-Hopper::Hopper(int id, pair<int, int> position, int direction, int size, bool alive, list<pair<int, int>> path, int hopLength) {
+Hopper::Hopper(int id, pair<int, int> position, int direction, int size, int hopLength) {
     this->id = id;
     this->position = position;
     this->direction = direction;
     this->size = size;   //1 - 20
-    this->alive = alive;
-    this->path = path;
+    //alive = true;
+    path = {position};
     this->hopLength = hopLength; //range of 2-4 units
     type = "Hopper";
 };
